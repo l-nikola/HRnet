@@ -2,3 +2,24 @@
 @use "./pages/createEmployee.scss";
 @use "./pages/currentEmployee.scss";
 @use "./pages/error.scss";
+@use "./components/button.scss";
+
+/* *********** Variables ********** */
+:root {
+  --lime50: #f7fee7;
+  --lime100: #ecfccb;
+  --lime200: #d9f99d;
+  --lime300: #bef264;
+  --lime400: #a3e635;
+  --lime500: #84cc16;
+  --lime600: #65a30d;
+  --lime700: #4d7c0f;
+  --lime800: #3f6212;
+  --lime900: #365314;
+  --lime950: #1a2e05;
+}
+
+/* *********** General ********** */
+body {
+  background-color: var(--lime950);
+}
