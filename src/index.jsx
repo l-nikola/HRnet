@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateEmployee from "./pages/CreateEmployee/";
 import CurrentEmployee from "./pages/CurrentEmployee/";
 import Error from "./pages/Error/";
+import Header from "./components/Header";
 import "./styles/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
+    <Header />
     <Routes>
       <Route path="/" element={<CreateEmployee />} />
       <Route path="/current-employee" element={<CurrentEmployee />} />
