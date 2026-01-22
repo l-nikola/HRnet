@@ -2,7 +2,11 @@
 @use "./pages/createEmployee.scss";
 @use "./pages/currentEmployee.scss";
 @use "./pages/error.scss";
+@use "./components/header.scss";
 @use "./components/button.scss";
+
+/* *********** General import ********** */
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap");
 
 /* *********** Variables ********** */
 :root {
@@ -22,4 +26,11 @@
 /* *********** General ********** */
 body {
   background-color: var(--lime950);
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: "Domine", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
