@@ -1,7 +1,3 @@
 export default function CurrentEmployee() {
-  return (
-    <section>
-      <h2>CurrentEmployee</h2>
-    </section>
-  );
+  return <main className="currentEmployee"></main>;
 }
