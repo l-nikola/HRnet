@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { DayPicker } from "react-day-picker";
-import { enUS } from "date-fns/locale";
+import { enUS, fr } from "date-fns/locale";
 import "react-day-picker/dist/style.css";
 
-export default function Popup({ value, onChange, showTodayButton }) {
+export default function Popup({ value, onChange, showTodayButton, locale }) {
   const [month, setMonth] = useState(value ?? new Date());
+
+  const resolvedLocale =
+    locale === "fr" ? fr : locale === "en" ? enUS : undefined;
 
   const handleSelect = (date) => {
     if (!date) return;
@@ -31,7 +34,7 @@ export default function Popup({ value, onChange, showTodayButton }) {
         onMonthChange={setMonth}
         selected={value}
         onSelect={handleSelect}
-        locale={enUS}
+        locale={resolvedLocale}
         captionLayout="dropdown"
       />
 

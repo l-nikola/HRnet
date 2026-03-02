@@ -2,9 +2,12 @@ import { useState } from "react";
 import Popup from "../DatePicker/Popup";
 import { Calendar1 } from "lucide-react";
 
-export default function DatePicker({ showTodayButton, label }) {
+export default function DatePicker({ showTodayButton, label, locale }) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
+
+  const resolvedLocale =
+    locale === "fr" ? "fr-FR" : locale === "en" ? "en-US" : undefined;
 
   const handleChange = (date) => {
     setValue(date);
@@ -34,7 +37,7 @@ export default function DatePicker({ showTodayButton, label }) {
       >
         <span style={{ color: value ? "#000" : "#aaa", minWidth: "100px" }}>
           {value
-            ? value.toLocaleDateString("en-US", {
+            ? value.toLocaleDateString(resolvedLocale, {
                 month: "2-digit",
                 day: "2-digit",
                 year: "numeric",
@@ -49,6 +52,7 @@ export default function DatePicker({ showTodayButton, label }) {
           value={value}
           onChange={handleChange}
           showTodayButton={showTodayButton}
+          locale={locale}
         />
       )}
     </div>
