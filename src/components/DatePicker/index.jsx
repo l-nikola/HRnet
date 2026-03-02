@@ -2,7 +2,7 @@ import { useState } from "react";
 import Popup from "../DatePicker/Popup";
 import { Calendar1 } from "lucide-react";
 
-export default function DatePicker({ showTodayButton }) {
+export default function DatePicker({ showTodayButton, label }) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
 
@@ -39,7 +39,7 @@ export default function DatePicker({ showTodayButton }) {
                 day: "2-digit",
                 year: "numeric",
               })
-            : "MM/DD/YYYY"}
+            : label}
         </span>
         <Calendar1 size={18} color="#888" />
       </div>

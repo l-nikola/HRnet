@@ -23,7 +23,12 @@ export default function CreateEmployee() {
 
   return (
     <main className="createEmployee">
-      <DatePicker value={date} onChange={setDate} showTodayButton />
+      <DatePicker
+        value={date}
+        onChange={setDate}
+        showTodayButton
+        label="My label"
+      />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form onSubmit={handleSubmit}>
           <EmployeeGeneralInfo />
