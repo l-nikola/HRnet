@@ -3,12 +3,16 @@ import { DayPicker } from "react-day-picker";
 import { enUS } from "date-fns/locale";
 import "react-day-picker/dist/style.css";
 
-export default function Popup({ value, onChange }) {
+export default function Popup({ value, onChange, showTodayButton }) {
   const [month, setMonth] = useState(value ?? new Date());
 
   const handleSelect = (date) => {
     if (!date) return;
     onChange(date);
+  };
+
+  const handleClick = () => {
+    onChange(new Date());
   };
 
   return (
@@ -30,7 +34,8 @@ export default function Popup({ value, onChange }) {
         locale={enUS}
         captionLayout="dropdown"
       />
-      TODAY BUTTON
+
+      {showTodayButton && <button onClick={handleClick}>TODAY BUTTON</button>}
     </div>
   );
 }

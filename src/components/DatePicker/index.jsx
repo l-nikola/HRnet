@@ -2,7 +2,7 @@ import { useState } from "react";
 import Popup from "../DatePicker/Popup";
 import { Calendar1 } from "lucide-react";
 
-export default function DatePicker() {
+export default function DatePicker({ showTodayButton }) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
 
@@ -44,7 +44,13 @@ export default function DatePicker() {
         <Calendar1 size={18} color="#888" />
       </div>
 
-      {open && <Popup value={value} onChange={handleChange} />}
+      {open && (
+        <Popup
+          value={value}
+          onChange={handleChange}
+          showTodayButton={showTodayButton}
+        />
+      )}
     </div>
   );
 }
