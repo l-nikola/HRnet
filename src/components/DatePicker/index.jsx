@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Popup from "../DatePicker/popUp";
+import Popup from "../DatePicker/Popup";
 import { Calendar1 } from "lucide-react";
 
 export default function DatePicker() {
