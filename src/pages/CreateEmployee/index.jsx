@@ -28,7 +28,8 @@ export default function CreateEmployee() {
         onChange={setDate}
         showTodayButton
         label="My label"
-        locale="en"
+        locale="fr"
+        captionLayout="dropdown"
       />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form onSubmit={handleSubmit}>

@@ -2,7 +2,12 @@ import { useState } from "react";
 import Popup from "../DatePicker/Popup";
 import { Calendar1 } from "lucide-react";
 
-export default function DatePicker({ showTodayButton, label, locale }) {
+export default function DatePicker({
+  showTodayButton,
+  label,
+  locale,
+  captionLayout,
+}) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
 
@@ -53,6 +58,7 @@ export default function DatePicker({ showTodayButton, label, locale }) {
           onChange={handleChange}
           showTodayButton={showTodayButton}
           locale={locale}
+          captionLayout={captionLayout}
         />
       )}
     </div>
