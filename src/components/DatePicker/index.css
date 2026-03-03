@@ -1,0 +1,44 @@
+.datepicker {
+  position: relative;
+  display: inline-block;
+
+  & .datepicker__trigger {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    gap: 8px;
+    background-color: transparent;
+  }
+
+  & .datepicker__placeholder {
+    color: #aaa;
+    min-width: 100px;
+  }
+
+  & .datepicker__value {
+    color: #000;
+    min-width: 100px;
+  }
+}
+
+.datepicker-popup {
+  position: absolute;
+  background-color: white;
+  z-index: 10;
+  color: black;
+
+  & .rdp-root {
+    --rdp-selected-border: 1px solid black;
+  }
+
+  & .rdp-chevron {
+    fill: black;
+  }
+
+  & .rdp-today .rdp-day_button {
+    color: black;
+  }
+}

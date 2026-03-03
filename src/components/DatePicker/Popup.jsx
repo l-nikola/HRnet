@@ -25,14 +25,7 @@ export default function Popup({
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        backgroundColor: "red",
-        zIndex: "10",
-        color: "white",
-      }}
-    >
+    <div className="datepicker-popup">
       <DayPicker
         mode="single"
         showOutsideDays
