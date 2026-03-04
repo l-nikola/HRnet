@@ -2,6 +2,7 @@
   display: inline-block;
 
   & .datepicker__trigger {
+    position: relative;
     display: flex;
     align-items: center;
     border: 1px solid #bec3b1;
@@ -21,6 +22,23 @@
     color: #000;
     min-width: 100px;
     font-family: Inter, sans-serif;
+  }
+
+  & .datepicker__label {
+    display: none;
+
+    &.datepicker__label--displayed {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 16px;
+      transform: translateY(-50%);
+      font-size: 0.75rem;
+      color: #64665c;
+      font-family: Inter, sans-serif;
+      background-color: #f8fee7;
+      padding: 0 4px;
+    }
   }
 }
 

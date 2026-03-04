@@ -33,6 +33,11 @@ export default function DatePicker({
         onClick={() => setOpen((prev) => !prev)}
       >
         <span
+          className={`datepicker__label ${value ? "datepicker__label--displayed" : ""}`}
+        >
+          {label}
+        </span>
+        <span
           className={value ? "datepicker__value" : "datepicker__placeholder"}
         >
           {value
