@@ -36,7 +36,14 @@ export default function Popup({
         locale={resolvedLocale}
         captionLayout={captionLayout}
       />
-      {showTodayButton && <button onClick={handleClick}>TODAY BUTTON</button>}
+      {showTodayButton && (
+        <button
+          onClick={handleClick}
+          className="datepicker-popup__today-button"
+        >
+          TODAY BUTTON
+        </button>
+      )}
     </div>
   );
 }

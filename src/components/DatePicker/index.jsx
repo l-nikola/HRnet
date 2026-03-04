@@ -43,7 +43,7 @@ export default function DatePicker({
               })
             : label}
         </span>
-        <Calendar1 size={18} color="#888" />
+        <Calendar1 size={22} color="#71756A" />
       </div>
 
       {open && (
