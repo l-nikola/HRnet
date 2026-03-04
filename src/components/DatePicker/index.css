@@ -55,3 +55,26 @@
     width: 100%;
   }
 }
+
+.datepicker-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .datepicker-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: max-content;
+  }
+
+  .datepicker-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+}

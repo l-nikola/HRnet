@@ -47,13 +47,16 @@ export default function DatePicker({
       </div>
 
       {open && (
-        <Popup
-          value={value}
-          onChange={handleChange}
-          showTodayButton={showTodayButton}
-          locale={locale}
-          captionLayout={captionLayout}
-        />
+        <>
+          <div className="datepicker-backdrop" onClick={() => setOpen(false)} />
+          <Popup
+            value={value}
+            onChange={handleChange}
+            showTodayButton={showTodayButton}
+            locale={locale}
+            captionLayout={captionLayout}
+          />
+        </>
       )}
     </div>
   );
