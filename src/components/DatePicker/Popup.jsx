@@ -41,7 +41,7 @@ export default function Popup({
           onClick={handleClick}
           className="datepicker-popup__today-button"
         >
-          TODAY BUTTON
+          {locale === "fr" ? "Aujourd'hui" : "Today"}
         </button>
       )}
     </div>
