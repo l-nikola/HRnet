@@ -4,6 +4,8 @@ import { Calendar1 } from "lucide-react";
 import "./index.css";
 
 export default function DatePicker({
+  className,
+  popupClassName,
   showTodayButton,
   label,
   locale,
@@ -22,7 +24,7 @@ export default function DatePicker({
 
   return (
     <div
-      className="datepicker"
+      className={`datepicker ${className ?? ""}`}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
@@ -60,6 +62,7 @@ export default function DatePicker({
             showTodayButton={showTodayButton}
             locale={locale}
             captionLayout={captionLayout}
+            popupClassName={popupClassName}
           />
         </>
       )}

@@ -4,6 +4,7 @@ import { enUS, fr } from "date-fns/locale";
 import "react-day-picker/dist/style.css";
 
 export default function Popup({
+  popupClassName,
   value,
   onChange,
   showTodayButton,
@@ -25,7 +26,7 @@ export default function Popup({
   };
 
   return (
-    <div className="datepicker-popup">
+    <div className={`datepicker-popup ${popupClassName ?? ""}`}>
       <DayPicker
         mode="single"
         showOutsideDays
