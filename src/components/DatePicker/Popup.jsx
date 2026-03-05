@@ -26,7 +26,7 @@ export default function Popup({
   };
 
   return (
-    <div className={`datepicker-popup ${popupClassName ?? ""}`}>
+    <div className={`dp-popup ${popupClassName ?? ""}`}>
       <DayPicker
         mode="single"
         showOutsideDays
@@ -38,10 +38,7 @@ export default function Popup({
         captionLayout={captionLayout}
       />
       {showTodayButton && (
-        <button
-          onClick={handleClick}
-          className="datepicker-popup__today-button"
-        >
+        <button onClick={handleClick} className="dp-popup-today-btn">
           {locale === "fr" ? "Aujourd'hui" : "Today"}
         </button>
       )}

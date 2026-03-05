@@ -24,24 +24,17 @@ export default function DatePicker({
 
   return (
     <div
-      className={`datepicker ${className ?? ""}`}
+      className={`dp ${className ?? ""}`}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
       tabIndex={-1}
     >
-      <div
-        className="datepicker__trigger"
-        onClick={() => setOpen((prev) => !prev)}
-      >
-        <span
-          className={`datepicker__label ${value ? "datepicker__label--displayed" : ""}`}
-        >
+      <div className="dp-trigger" onClick={() => setOpen((prev) => !prev)}>
+        <span className={`dp-label ${value ? "dp-label-displayed" : ""}`}>
           {label}
         </span>
-        <span
-          className={value ? "datepicker__value" : "datepicker__placeholder"}
-        >
+        <span className={value ? "dp-value" : "dp-placeholder"}>
           {value
             ? value.toLocaleDateString(resolvedLocale, {
                 month: "2-digit",
@@ -55,7 +48,7 @@ export default function DatePicker({
 
       {open && (
         <>
-          <div className="datepicker-backdrop" onClick={() => setOpen(false)} />
+          <div className="dp-backdrop" onClick={() => setOpen(false)} />
           <Popup
             value={value}
             onChange={handleChange}

@@ -1,7 +1,7 @@
-.datepicker {
+.dp {
   display: inline-block;
 
-  & .datepicker__trigger {
+  & .dp-trigger {
     position: relative;
     display: flex;
     align-items: center;
@@ -12,22 +12,22 @@
     background-color: transparent;
   }
 
-  & .datepicker__placeholder {
+  & .dp-placeholder {
     color: #64665c;
     min-width: 100px;
     font-family: Inter, sans-serif;
   }
 
-  & .datepicker__value {
+  & .dp-value {
     color: #000;
     min-width: 100px;
     font-family: Inter, sans-serif;
   }
 
-  & .datepicker__label {
+  & .dp-label {
     display: none;
 
-    &.datepicker__label--displayed {
+    &.dp-label-displayed {
       display: block;
       position: absolute;
       top: 0;
@@ -40,9 +40,13 @@
       padding: 0 4px;
     }
   }
+
+  & .dp--backdrop {
+    display: none;
+  }
 }
 
-.datepicker-popup {
+.dp-popup {
   position: absolute;
   z-index: 10;
   background-color: white;
@@ -63,7 +67,7 @@
     color: black;
   }
 
-  & .datepicker-popup__today-button {
+  & .dp-popup-today-btn {
     background-color: #bec3b1;
     cursor: pointer;
     border: none;
@@ -74,12 +78,8 @@
   }
 }
 
-.datepicker-backdrop {
-  display: none;
-}
-
 @media (max-width: 768px) {
-  .datepicker-popup {
+  .dp-popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -88,7 +88,7 @@
     width: max-content;
   }
 
-  .datepicker-backdrop {
+  .dp-backdrop {
     display: block;
     position: fixed;
     inset: 0;
