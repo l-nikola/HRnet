@@ -40,10 +40,6 @@
       padding: 0 4px;
     }
   }
-
-  & .dp--backdrop {
-    display: none;
-  }
 }
 
 .dp-popup {
