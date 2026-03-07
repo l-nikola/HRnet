@@ -32,6 +32,7 @@ export default function CreateEmployee() {
         children="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam ratione quam modi voluptas temporibus doloribus aliquam molestias non hic facilis recusandae, beatae minus? Asperiores vitae ad rem itaque corporis."
         open={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        closeOnOverlayClick
       />
       <DatePicker
         value={date}
