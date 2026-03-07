@@ -6,6 +6,7 @@ import EmployeeGeneralInfo from "../../components/Form/EmployeeGeneralInfo";
 import EmployeeAddress from "../../components/Form/EmployeeAddress";
 import EmployeeDepartment from "../../components/Form/EmployeeDepartment";
 import DatePicker from "../../components/DatePicker";
+import Modal from "../../components/Modal";
 
 export default function CreateEmployee() {
   const [state, setState] = useState("");
@@ -21,8 +22,17 @@ export default function CreateEmployee() {
 
   const [date, setDate] = useState();
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="createEmployee">
+      <button onClick={() => setIsModalOpen(true)}>Open modal</button>
+      <Modal
+        title="My title"
+        children="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam ratione quam modi voluptas temporibus doloribus aliquam molestias non hic facilis recusandae, beatae minus? Asperiores vitae ad rem itaque corporis."
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
       <DatePicker
         value={date}
         onChange={setDate}
