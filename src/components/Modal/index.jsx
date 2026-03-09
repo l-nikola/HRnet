@@ -13,13 +13,13 @@ export default function Modal({
   classNameOverlay,
 }) {
   useEffect(() => {
-    if (!closeOnEsc) return;
+    if (!closeOnEsc || !open) return;
     const handler = (event) => {
       if (event.key === "Escape") onClose();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [closeOnEsc, onClose]);
+  }, [closeOnEsc, onClose, open]);
 
   useEffect(() => {
     if (!preventScroll || !open) return;
