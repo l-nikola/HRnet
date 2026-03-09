@@ -34,6 +34,7 @@ export default function CreateEmployee() {
         onClose={() => setIsModalOpen(false)}
         closeOnOverlayClick
         closeOnEsc
+        preventScroll
       />
       <DatePicker
         value={date}

@@ -8,6 +8,7 @@ export default function Modal({
   onClose,
   closeOnOverlayClick = false,
   closeOnEsc = false,
+  preventScroll = false,
 }) {
   useEffect(() => {
     if (!closeOnEsc) return;
@@ -17,6 +18,14 @@ export default function Modal({
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [closeOnEsc, onClose]);
+
+  useEffect(() => {
+    if (!preventScroll || !open) return;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [preventScroll, open]);
 
   if (!open) return null;
 
