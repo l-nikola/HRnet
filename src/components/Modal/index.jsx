@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./index.css";
 
 export default function Modal({
@@ -6,7 +7,17 @@ export default function Modal({
   open,
   onClose,
   closeOnOverlayClick = false,
+  closeOnEsc = false,
 }) {
+  useEffect(() => {
+    if (!closeOnEsc) return;
+    const handler = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [closeOnEsc, onClose]);
+
   if (!open) return null;
 
   return (
