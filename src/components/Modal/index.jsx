@@ -36,7 +36,9 @@ export default function Modal({
       <div className="modal">
         <h1>{title}</h1>
         <p>{children}</p>
-        <button onClick={onClose}>Close</button>
+        <button className="modal-btn" onClick={onClose}>
+          Close
+        </button>
       </div>
     </>
   );
