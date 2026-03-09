@@ -35,6 +35,8 @@ export default function CreateEmployee() {
         closeOnOverlayClick
         closeOnEsc
         preventScroll
+        className="my-modal"
+        classNameOverlay="my-modal-overlay"
       />
       <DatePicker
         value={date}

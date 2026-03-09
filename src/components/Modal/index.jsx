@@ -9,6 +9,8 @@ export default function Modal({
   closeOnOverlayClick = false,
   closeOnEsc = false,
   preventScroll = false,
+  className,
+  classNameOverlay,
 }) {
   useEffect(() => {
     if (!closeOnEsc) return;
@@ -31,9 +33,12 @@ export default function Modal({
 
   return (
     <>
-      <div className="modal-overlay" onClick={closeOnOverlayClick && onClose} />
+      <div
+        className={`modal-overlay ${classNameOverlay ?? ""}`}
+        onClick={closeOnOverlayClick && onClose}
+      />
 
-      <div className="modal">
+      <div className={`modal ${className ?? ""}`}>
         <h1>{title}</h1>
         <p>{children}</p>
         <button className="modal-btn" onClick={onClose}>
