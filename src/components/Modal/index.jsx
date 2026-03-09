@@ -12,6 +12,7 @@ export default function Modal({
   className,
   classNameOverlay,
 }) {
+  // Close the modal by pressing the “Esc” key.
   useEffect(() => {
     if (!closeOnEsc || !open) return;
     const handler = (event) => {
@@ -21,6 +22,7 @@ export default function Modal({
     return () => window.removeEventListener("keydown", handler);
   }, [closeOnEsc, onClose, open]);
 
+  // Prevents the page from scrolling when the modal is open
   useEffect(() => {
     if (!preventScroll || !open) return;
     document.body.style.overflow = "hidden";
@@ -29,10 +31,12 @@ export default function Modal({
     };
   }, [preventScroll, open]);
 
+  // Does not return anything if the modal is not open
   if (!open) return null;
 
   return (
     <>
+      {/* Clickable overlay to close the modal */}
       <div
         className={`modal-overlay ${classNameOverlay ?? ""}`}
         onClick={closeOnOverlayClick && onClose}
@@ -40,7 +44,7 @@ export default function Modal({
 
       <div className={`modal ${className ?? ""}`}>
         <h1>{title}</h1>
-        <p>{children}</p>
+        {children}
         <button className="modal-btn" onClick={onClose}>
           Close
         </button>
