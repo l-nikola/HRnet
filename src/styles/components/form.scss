@@ -11,8 +11,21 @@
 }
 
 .employeeDepartment {
+  padding-bottom: 25px;
+
   div {
     display: flex;
     gap: 15px;
+
+    //*********** Mobile ***********
+    @media only screen and (max-width: 425px) {
+      flex-direction: column;
+    }
+  }
+  &__select {
+    //*********** Mobile ***********
+    @media only screen and (max-width: 425px) {
+      padding-left: 11px;
+    }
   }
 }

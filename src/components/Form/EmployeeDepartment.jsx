@@ -15,6 +15,7 @@ export default function EmployeeDepartment({ state, handleChange }) {
             labelId="departement-label"
             value={state}
             onChange={handleChange}
+            className="employeeDepartment__select"
           >
             <MenuItem value="Sale">Sale</MenuItem>
             <MenuItem value="Marketing">Marketing</MenuItem>
