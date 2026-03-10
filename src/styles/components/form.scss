@@ -3,3 +3,16 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.employeeAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.employeeDepartment {
+  div {
+    display: flex;
+    gap: 15px;
+  }
+}
