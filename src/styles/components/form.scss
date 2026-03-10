@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  .dp-label.dp-label-displayed {
+    background-color: var(--lime50);
+  }
 }
 
 .employeeAddress {

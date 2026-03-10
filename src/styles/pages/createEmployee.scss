@@ -10,4 +10,13 @@
     flex-direction: column;
     gap: 25px;
   }
+
+  .MuiButton-root {
+    color: #64665c;
+    border: 1px solid #64665c;
+
+    &:hover {
+      background-color: var(--lime100);
+    }
+  }
 }
