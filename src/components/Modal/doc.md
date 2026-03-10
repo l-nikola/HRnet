@@ -34,6 +34,7 @@ export default function App() {
     <Modal
       title="My title"
       open={isModalOpen}
+      buttonLabel="Close"
       onClose={() => setIsModalOpen(false)}
     >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam ratione quam modi voluptas temporibus doloribus aliquam molestias non hic facilis recusandae, beatae minus? Asperiores vitae ad rem itaque corporis.
@@ -52,6 +53,7 @@ export default function App() {
 | `onClose`             | `() => void` | —       | Callback called when the modal is closed       |
 | `title`               | `string`     | —       | Title displayed at the top of the modal        |
 | `children`            | `ReactNode`  | —       | Content of the modal                           |
+| `buttonLabel`         | `string`     | —       | Button label                                   |
 | `closeOnOverlayClick` | `boolean`    | `false` | Closes the modal when clicking outside of it   |
 | `closeOnEsc`          | `boolean`    | `false` | Closes the modal when pressing the Escape key  |
 | `preventScroll`       | `boolean`    | `false` | Prevents page scrolling when the modal is open |
@@ -68,6 +70,7 @@ export default function App() {
 <Modal
   title="My title"
   open={isModalOpen}
+  buttonLabel="Close"
   onClose={() => setIsModalOpen(false)}
   closeOnOverlayClick
 >
@@ -83,6 +86,7 @@ Now I can close the modal by clicking outside of it.
 <Modal
   title="My title"
   open={isModalOpen}
+  buttonLabel="Close"
   onClose={() => setIsModalOpen(false)}
   closeOnEsc
 >
@@ -98,6 +102,7 @@ Now I can close the modal by pressing my Escape key.
 <Modal
   title="My title"
   open={isModalOpen}
+  buttonLabel="Close"
   onClose={() => setIsModalOpen(false)}
   preventScroll
 >
@@ -119,6 +124,7 @@ The component exposes two props for customizing styles: `className` on the modal
 <Modal
   title="My title"
   open={isModalOpen}
+  buttonLabel="Close"
   onClose={() => setIsModalOpen(false)}
   className="my-modal"
   classNameOverlay="my-modal-overlay"

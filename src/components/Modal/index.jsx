@@ -4,6 +4,7 @@ import "./index.css";
 export default function Modal({
   title,
   children,
+  buttonLabel,
   open,
   onClose,
   closeOnOverlayClick = false,
@@ -46,7 +47,7 @@ export default function Modal({
         <h1>{title}</h1>
         {children}
         <button className="modal-btn" onClick={onClose}>
-          Close
+          {buttonLabel}
         </button>
       </div>
     </>
