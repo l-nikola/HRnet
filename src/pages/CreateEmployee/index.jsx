@@ -5,8 +5,6 @@ import Button from "@mui/material/Button";
 import EmployeeGeneralInfo from "../../components/Form/EmployeeGeneralInfo";
 import EmployeeAddress from "../../components/Form/EmployeeAddress";
 import EmployeeDepartment from "../../components/Form/EmployeeDepartment";
-import DatePicker from "../../components/DatePicker";
-import Modal from "../../components/Modal";
 
 export default function CreateEmployee() {
   const [state, setState] = useState("");
@@ -20,33 +18,8 @@ export default function CreateEmployee() {
     console.log("Form envoyé");
   };
 
-  const [date, setDate] = useState();
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <main className="createEmployee">
-      <button onClick={() => setIsModalOpen(true)}>Open modal</button>
-      <Modal
-        title="My title"
-        children="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam ratione quam modi voluptas temporibus doloribus aliquam molestias non hic facilis recusandae, beatae minus? Asperiores vitae ad rem itaque corporis."
-        buttonLabel="Close"
-        open={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        closeOnOverlayClick
-        closeOnEsc
-        preventScroll
-        className="my-modal"
-        classNameOverlay="my-modal-overlay"
-      />
-      <DatePicker
-        value={date}
-        onChange={setDate}
-        showTodayButton
-        label="My label"
-        locale="fr"
-        captionLayout="dropdown"
-      />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form onSubmit={handleSubmit}>
           <EmployeeGeneralInfo />

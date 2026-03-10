@@ -1,14 +1,32 @@
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import DatePicker from "../../components/DatePicker";
 
 export default function EmployeeGeneralInfo() {
+  const [date, setDate] = useState();
+
   return (
     <section className="employeeGeneralInfo">
       <h3>Employee information</h3>
       <TextField label="First Name" variant="standard" />
       <TextField label="Last Name" variant="standard" />
-      <DatePicker label="Date of Birth" />
-      <DatePicker label="Start Date" />
+
+      <DatePicker
+        value={date}
+        onChange={setDate}
+        label="Date of Birth"
+        locale="en"
+        captionLayout="dropdown"
+      />
+
+      <DatePicker
+        value={date}
+        onChange={setDate}
+        showTodayButton
+        label="Start Date"
+        locale="en"
+        captionLayout="dropdown"
+      />
     </section>
   );
 }
