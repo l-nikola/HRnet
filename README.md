@@ -43,14 +43,7 @@ pnpm dev
 
 La société WealthHealth utilise une ancienne application web interne appelée HRnet pour gérer les dossiers des employés.
 
-Cette application a été développée avec jQuery et utilise plusieurs plugins tiers pour certains éléments d'interface :
-
-- sélecteurs de date
-- fenêtres modales
-- menus déroulants
-- tableaux de données
-
-Avec le temps, ces plugins sont devenus :
+Cette application a été développée avec jQuery. Avec le temps, ces plugins sont devenus :
 
 - lents
 - difficiles à maintenir
@@ -65,44 +58,44 @@ Le projet consiste donc à :
 ## Fonctionnalités
 
 - **Création d'employé** : Formulaire permettant d'ajouter un nouvel employé.
-- **Liste des employés** : Affichage dynamique des employés enregistrés.
+- **Liste des employés** : Affichage des employés enregistrés.
 - **Navigation entre pages** : Gestion des routes avec React Router.
-- **Fenêtre modale de confirmation** : Affichée après la création d'un employé.
 - **Gestion d'état** : Stockage des données des employés via un state manager.
 
 ## Plugin converti
 
-Dans le cadre du projet, un plugin jQuery a été converti en composant React réutilisable.
+Dans le cadre du projet, deux plugins jQuery ont été convertis en composant React réutilisable.
 
 ### DatePicker
 
 Fonctionnalités :
-ouverture / fermeture de la modale
-affichage d'un message personnalisé
-fermeture via bouton ou clic extérieur
-Ce composant a été développé en suivant :
-programmation fonctionnelle
-composants réutilisables
-props documentées
-Le composant est publié sous forme de package npm.
+
+- Input permettant de sélectionner une date
+- Calendrier interactif pour sélectionner la date
+- Support multilingue (français / anglais) via la prop `locale`
+- Sélecteur de mois/année en dropdown via la prop `captionLayout`
+- Bouton "Aujourd'hui" pour sélectionner rapidement la date du jour
+- Personnalisation du style de l'input via la prop `className`
+- Personnalisation du style du calendrier via la prop `popupClassName`
+- Le composant est publié sous forme de package npm : [le lien](le lien)
 
 ### Modal React
 
 Fonctionnalités :
-ouverture / fermeture de la modale
-affichage d'un message personnalisé
-fermeture via bouton ou clic extérieur
-Ce composant a été développé en suivant :
-programmation fonctionnelle
-composants réutilisables
-props documentées
-Le composant est publié sous forme de package npm.
+
+- Ouverture / fermeture de la modale
+- Affichage d'un message personnalisé
+- Fermeture via bouton ou clic extérieur
+- Fermeture via la touche "Escape"
+- Personnalisation du style via la prop `className`
+  Le composant est publié sous forme de package npm : [le lien](le lien)
 
 ## Technologies
 
 - **React** - Framework JavaScript pour la création d'interfaces utilisateur.
 - **Vite** - Outil de build rapide pour les applications React.
 - **React Router** - Gestion des routes de l'application.
+- **Redux** - Gestion de l'état global de l'application.
 - **SCSS** - Préprocesseur CSS pour une gestion optimisée des styles.
 - **JavaScript (ES6+)** - Langage principal du projet.
 - **Vercel** - Plateforme de déploiement permettant d’héberger et de mettre en ligne rapidement l’application web.
@@ -113,21 +106,27 @@ Le composant est publié sous forme de package npm.
 src/
 │
 ├── components/
-│ ├── Modal
+│ ├── Button
+│ ├── DataTable
 │ ├── Form
-│ └── Table
+│ └── ...
 │
 ├── pages/
 │ ├── CreateEmployee
-│ └── EmployeeList
+│ ├── EmployeeList
+│ └── Error
 │
 ├── store/
 │ └── employeeStore
 │
 ├── styles/
+│ ├── components/
+│ │ ├── ...
+│ ├── pages/
+│ │ ├── ...
+│ └── index.scss
 │
-├── App.jsx
-└── main.jsx
+└── index.jsx
 ```
 
 ## Performance
