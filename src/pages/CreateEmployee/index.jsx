@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addEmployee } from "../../store/slices/employeeSlice";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Button from "@mui/material/Button";
@@ -7,34 +9,61 @@ import EmployeeAddress from "../../components/Form/EmployeeAddress";
 import EmployeeDepartment from "../../components/Form/EmployeeDepartment";
 
 export default function CreateEmployee() {
-  const [stateAddress, setStateAddress] = useState("");
-  const [stateDepartment, setStateDepartment] = useState("");
+  const dispatch = useDispatch();
 
-  const handleChangeAddress = (event) => {
-    setStateAddress(event.target.value);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    dateOfBirth: null,
+    startDate: null,
+    street: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    department: "",
+  });
+
+  const handleChange = (field) => (e) => {
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  const handleChangeDepartment = (event) => {
-    setStateDepartment(event.target.value);
+  const handleDateChange = (field) => (date) => {
+    setFormData((prev) => ({ ...prev, [field]: date }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form envoyé");
+    dispatch(
+      addEmployee({
+        ...formData,
+        dateOfBirth: formData.dateOfBirth?.toISOString() ?? null,
+        startDate: formData.startDate?.toISOString() ?? null,
+      }),
+    );
   };
 
   return (
     <main className="createEmployee">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form onSubmit={handleSubmit}>
-          <EmployeeGeneralInfo />
+          <EmployeeGeneralInfo
+            firstName={formData.firstName}
+            lastName={formData.lastName}
+            dateOfBirth={formData.dateOfBirth}
+            startDate={formData.startDate}
+            onChangeField={handleChange}
+            onDateChange={handleDateChange}
+          />
           <EmployeeAddress
-            state={stateAddress}
-            handleChange={handleChangeAddress}
+            street={formData.street}
+            city={formData.city}
+            state={formData.state}
+            onChangeField={handleChange}
           />
           <EmployeeDepartment
-            state={stateDepartment}
-            handleChange={handleChangeDepartment}
+            department={formData.department}
+            zipCode={formData.zipCode}
+            onChangeField={handleChange}
           />
 
           <Button type="submit" variant="outlined">

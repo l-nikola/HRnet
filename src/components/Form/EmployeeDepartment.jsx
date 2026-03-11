@@ -4,7 +4,11 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 
-export default function EmployeeDepartment({ state, handleChange }) {
+export default function EmployeeDepartment({
+  department,
+  zipCode,
+  onChangeField,
+}) {
   return (
     <section className="employeeDepartment">
       <h3>Department</h3>
@@ -13,8 +17,8 @@ export default function EmployeeDepartment({ state, handleChange }) {
           <InputLabel id="departement-label">Department</InputLabel>
           <Select
             labelId="departement-label"
-            value={state}
-            onChange={handleChange}
+            value={department}
+            onChange={onChangeField("department")}
             className="employeeDepartment__select"
           >
             <MenuItem value="Sale">Sale</MenuItem>
@@ -24,7 +28,13 @@ export default function EmployeeDepartment({ state, handleChange }) {
             <MenuItem value="Legal">Legal</MenuItem>
           </Select>
         </FormControl>
-        <TextField label="Zip Code" type="number" variant="standard" />
+        <TextField
+          label="Zip Code"
+          type="number"
+          variant="standard"
+          value={zipCode}
+          onChange={onChangeField("zipCode")}
+        />
       </div>
     </section>
   );
