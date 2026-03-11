@@ -59,10 +59,10 @@ export default function DataTable({ rows, headCells }) {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Paper sx={{ width: "100%", mb: 2 }}>
+    <Box className="dataTable">
+      <Paper className="dataTable__paper">
         {/* ===== SEARCH INPUT ===== */}
-        <Box sx={{ p: 2, display: "flex", justifyContent: "flex-end" }}>
+        <Box className="dataTable__searchBox">
           <TextField
             label="Search"
             size="small"
@@ -72,7 +72,7 @@ export default function DataTable({ rows, headCells }) {
         </Box>
 
         <TableContainer>
-          <Table size="medium" sx={{ tableLayout: "fixed" }}>
+          <Table size="medium" className="dataTable__table">
             <DataTableHead
               order={order}
               orderBy={orderBy}
@@ -91,12 +91,7 @@ export default function DataTable({ rows, headCells }) {
                 visibleRows.map((row) => (
                   <TableRow hover key={row.id}>
                     {headCells.map((cell) => (
-                      <TableCell
-                        sx={{
-                          height: 60,
-                        }}
-                        key={cell.id}
-                      >
+                      <TableCell className="dataTable__cell" key={cell.id}>
                         {row[cell.id]}
                       </TableCell>
                     ))}

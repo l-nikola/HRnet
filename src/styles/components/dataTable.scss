@@ -1,0 +1,32 @@
+.dataTable {
+  width: 100%;
+
+  &__head {
+    background-color: color-mix(in srgb, var(--lime50) 95%, black);
+
+    &--label {
+      font-weight: bolder;
+      white-space: nowrap;
+    }
+  }
+
+  &__paper {
+    background-color: var(--lime50) !important;
+    border-radius: 25px !important;
+    margin-bottom: 50px;
+  }
+
+  &__searchBox {
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__table {
+    table-layout: fixed;
+  }
+
+  &__cell {
+    height: 30px;
+  }
+}

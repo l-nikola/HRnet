@@ -14,11 +14,12 @@ export default function DataTableHead({
   };
 
   return (
-    <TableHead>
+    <TableHead className="dataTable__head">
       <TableRow>
         {headCells.map((headCell) => (
           <TableCell key={headCell.id}>
             <TableSortLabel
+              className="dataTable__head--label"
               active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : "asc"}
               onClick={createSortHandler(headCell.id)}
