@@ -7,10 +7,15 @@ import EmployeeAddress from "../../components/Form/EmployeeAddress";
 import EmployeeDepartment from "../../components/Form/EmployeeDepartment";
 
 export default function CreateEmployee() {
-  const [state, setState] = useState("");
+  const [stateAddress, setStateAddress] = useState("");
+  const [stateDepartment, setStateDepartment] = useState("");
 
-  const handleChange = (event) => {
-    setState(event.target.value);
+  const handleChangeAddress = (event) => {
+    setStateAddress(event.target.value);
+  };
+
+  const handleChangeDepartment = (event) => {
+    setStateDepartment(event.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -23,8 +28,14 @@ export default function CreateEmployee() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form onSubmit={handleSubmit}>
           <EmployeeGeneralInfo />
-          <EmployeeAddress state={state} handleChange={handleChange} />
-          <EmployeeDepartment state={state} handleChange={handleChange} />
+          <EmployeeAddress
+            state={stateAddress}
+            handleChange={handleChangeAddress}
+          />
+          <EmployeeDepartment
+            state={stateDepartment}
+            handleChange={handleChangeDepartment}
+          />
 
           <Button type="submit" variant="outlined">
             Save
