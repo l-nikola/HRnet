@@ -4,6 +4,8 @@ import { Calendar1 } from "lucide-react";
 import "./index.css";
 
 export default function DatePicker({
+  value,
+  onChange,
   className,
   popupClassName,
   showTodayButton,
@@ -12,7 +14,6 @@ export default function DatePicker({
   captionLayout,
 }) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
 
   // Adjusts the locale used for displaying the date
   const resolvedLocale =
@@ -22,7 +23,7 @@ export default function DatePicker({
   // - Updates the value
   // - Closes the popup
   const handleChange = (date) => {
-    setValue(date);
+    onChange(date);
     setOpen(false);
   };
 
