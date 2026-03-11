@@ -52,6 +52,29 @@ export default function App() {
 
 ---
 
+## Controlled component
+
+The `DatePicker` is a **controlled component**: it does not manage its own internal state. The `value` and `onChange` props are required to make it work correctly.
+
+> ⚠️ Do not declare a local `useState` inside the `DatePicker` — always manage the value from the parent component.
+
+```jsx
+// ✅ Correct — state is managed by the parent
+const [date, setDate] = useState(null);
+
+<DatePicker value={date} onChange={setDate} label="Date of birth" />;
+```
+
+```jsx
+// ❌ Incorrect — do not manage the value inside the component itself
+export default function DatePicker({ label }) {
+  const [value, setValue] = useState(null); // ← wrong
+  ...
+}
+```
+
+---
+
 ## Examples
 
 ### With the “Today” button and the French locale
@@ -153,7 +176,7 @@ The component exposes two props for customizing styles: `className` on the label
 
 #### With `className`
 
-| Classe                                        | Description                               |
+| Class                                         | Description                               |
 | --------------------------------------------- | ----------------------------------------- |
 | `.my-datepicker .dp-trigger`                  | Input style                               |
 | `.my-datepicker .dp-placeholder`              | Placeholder style in the input            |
@@ -163,7 +186,7 @@ The component exposes two props for customizing styles: `className` on the label
 
 #### With `popupClassName`
 
-| Classe                                     | Description                 |
+| Class                                      | Description                 |
 | ------------------------------------------ | --------------------------- |
 | `.my-datepicker-popup`                     | Calendar container style    |
 | `.my-datepicker-popup .dp-popup-today-btn` | Style of the “Today” button |
@@ -205,8 +228,9 @@ The `rdp-*` classes come from `react-day-picker`. You can override them via `pop
 
 ---
 
-## Dépendances
+## Dependencies
 
 - [react-day-picker](https://daypicker.dev) — Calendar
-- [date-fns](https://date-fns.org) — Local management
+- [date-fns](https://date-fns.org) — Locale management
 - [lucide-react](https://lucide.dev) — Calendar icon
+- [dayjs](https://day.js.org) — Recommended for timezone-safe date formatting
