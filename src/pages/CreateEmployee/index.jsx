@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addEmployee } from "../../store/slices/employeeSlice";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs from "dayjs";
 import Button from "@mui/material/Button";
 import EmployeeGeneralInfo from "../../components/Form/EmployeeGeneralInfo";
 import EmployeeAddress from "../../components/Form/EmployeeAddress";
@@ -36,8 +37,12 @@ export default function CreateEmployee() {
     dispatch(
       addEmployee({
         ...formData,
-        dateOfBirth: formData.dateOfBirth?.toISOString() ?? null,
-        startDate: formData.startDate?.toISOString() ?? null,
+        dateOfBirth: formData.dateOfBirth
+          ? dayjs(formData.dateOfBirth).format("MM-DD-YYYY")
+          : null,
+        startDate: formData.startDate
+          ? dayjs(formData.startDate).format("MM-DD-YYYY")
+          : null,
       }),
     );
   };
