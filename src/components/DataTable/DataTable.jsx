@@ -84,7 +84,7 @@ export default function DataTable({ rows, headCells }) {
               {visibleRows.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={headCells.length} align="center">
-                    Pas de données
+                    No data available...
                   </TableCell>
                 </TableRow>
               ) : (
