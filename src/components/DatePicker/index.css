@@ -11,6 +11,10 @@
     padding: 15px 20px;
     cursor: pointer;
     background-color: transparent;
+
+    & .dp-trigger--error {
+      border-bottom: 2px solid #d32f2f;
+    }
   }
 
   & .dp-placeholder {
@@ -40,6 +44,18 @@
       background-color: white;
       padding: 0 4px;
     }
+
+    & .dp-label--error {
+      color: #d32f2f;
+    }
+  }
+
+  & .dp-error-text {
+    color: #d32f2f;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: block;
+    font-family: Inter, sans-serif;
   }
 }
 

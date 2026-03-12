@@ -12,6 +12,8 @@ export default function DatePicker({
   label,
   locale,
   captionLayout,
+  error,
+  helperText,
 }) {
   const [open, setOpen] = useState(false);
 
@@ -36,9 +38,14 @@ export default function DatePicker({
       }}
       tabIndex={-1}
     >
-      <div className="dp-trigger" onClick={() => setOpen((prev) => !prev)}>
+      <div
+        className={`dp-trigger ${error ? "dp-trigger--error" : ""}`}
+        onClick={() => setOpen((prev) => !prev)}
+      >
         {/* Displays the label above when a date is selected */}
-        <span className={`dp-label ${value ? "dp-label-displayed" : ""}`}>
+        <span
+          className={`dp-label ${value ? "dp-label-displayed" : ""} ${error ? "dp-label--error" : ""}`}
+        >
           {label}
         </span>
 
@@ -52,8 +59,13 @@ export default function DatePicker({
               })
             : label}
         </span>
-        <Calendar1 size={22} color="#71756A" />
+        <Calendar1 size={22} color={error ? "#d32f2f" : "#71756A"} />
       </div>
+
+      {/* Error message */}
+      {error && helperText && (
+        <span className="dp-error-text">{helperText}</span>
+      )}
 
       {open && (
         <>

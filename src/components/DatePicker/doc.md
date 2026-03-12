@@ -49,6 +49,8 @@ export default function App() {
 | `showTodayButton` | `boolean`                                                 | `false`     | Displays a button to select the current date |
 | `className`       | `string`                                                  | —           | CSS class to change the style of the input   |
 | `popupClassName`  | `string`                                                  | —           | CSS class to modify the calendar popup       |
+| `error`           | `boolean`                                                 | `false`     | Displays the field in error state            |
+| `helperText`      | `string`                                                  | —           | Error message displayed below the field      |
 
 ---
 
