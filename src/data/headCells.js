@@ -1,6 +1,7 @@
 export const headCells = [
   { id: "firstName", numeric: false, label: "First Name" },
   { id: "lastName", numeric: false, label: "Last Name" },
+  { id: "dateOfBirth", numeric: false, label: "Date of Birth" },
   { id: "startDate", numeric: false, label: "Start Date" },
   { id: "department", numeric: false, label: "Department" },
   { id: "street", numeric: false, label: "Street" },
