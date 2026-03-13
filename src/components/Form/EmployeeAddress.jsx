@@ -5,6 +5,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
+import { states } from "../../data/states";
 
 export default function EmployeeAddress() {
   const {
@@ -38,8 +39,11 @@ export default function EmployeeAddress() {
           rules={{ required: "State is required" }}
           render={({ field }) => (
             <Select {...field} labelId="state-label">
-              <MenuItem value="Alabama">Alabama</MenuItem>
-              <MenuItem value="Alaska">Alaska</MenuItem>
+              {states.map((state) => (
+                <MenuItem key={state.id} value={state.id}>
+                  {state.name}
+                </MenuItem>
+              ))}
             </Select>
           )}
         />

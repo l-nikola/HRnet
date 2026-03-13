@@ -4,6 +4,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import { departements } from "../../data/departements";
 
 export default function EmployeeDepartment() {
   const {
@@ -23,11 +24,11 @@ export default function EmployeeDepartment() {
             rules={{ required: "Department is required" }}
             render={({ field }) => (
               <Select {...field} labelId="department-label">
-                <MenuItem value="Sale">Sale</MenuItem>
-                <MenuItem value="Marketing">Marketing</MenuItem>
-                <MenuItem value="Engineering">Engineering</MenuItem>
-                <MenuItem value="HumanResources">Human Resources</MenuItem>
-                <MenuItem value="Legal">Legal</MenuItem>
+                {departements.map((departement) => (
+                  <MenuItem key={departement.id} value={departement.id}>
+                    {departement.label}
+                  </MenuItem>
+                ))}
               </Select>
             )}
           />
