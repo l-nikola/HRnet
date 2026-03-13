@@ -12,7 +12,7 @@
     cursor: pointer;
     background-color: transparent;
 
-    & .dp-trigger--error {
+    &.dp-trigger--error {
       border-bottom: 2px solid #d32f2f;
     }
   }
@@ -21,6 +21,10 @@
     color: #64665c;
     min-width: 100px;
     font-family: Inter, sans-serif;
+
+    &.dp-placeholder--error {
+      color: #d32f2f;
+    }
   }
 
   & .dp-value {
@@ -45,7 +49,7 @@
       padding: 0 4px;
     }
 
-    & .dp-label--error {
+    &.dp-label--error {
       color: #d32f2f;
     }
   }

@@ -50,7 +50,9 @@ export default function DatePicker({
         </span>
 
         {/* Date or placeholder if no date is selected */}
-        <span className={value ? "dp-value" : "dp-placeholder"}>
+        <span
+          className={`${value ? "dp-value" : "dp-placeholder"} ${error ? "dp-placeholder--error" : ""}`}
+        >
           {value
             ? value.toLocaleDateString(resolvedLocale, {
                 month: "2-digit",
