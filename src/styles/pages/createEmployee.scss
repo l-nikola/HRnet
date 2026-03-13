@@ -19,4 +19,24 @@
       background-color: var(--lime100);
     }
   }
+
+  &__modal {
+    background-color: var(--lime50);
+    border-radius: 25px;
+
+    h1 {
+      font-size: x-large;
+      color: var(--lime900);
+    }
+
+    .modal-btn {
+      background-color: transparent;
+      border: 1px solid #64665c;
+      color: #64665c;
+
+      &:hover {
+        background-color: var(--lime100);
+      }
+    }
+  }
 }

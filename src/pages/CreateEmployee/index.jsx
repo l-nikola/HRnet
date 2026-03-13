@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import { addEmployee } from "../../store/slices/employeeSlice";
@@ -5,12 +6,14 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import Button from "@mui/material/Button";
+import Modal from "../../components/Modal";
 import EmployeeGeneralInfo from "../../components/Form/EmployeeGeneralInfo";
 import EmployeeAddress from "../../components/Form/EmployeeAddress";
 import EmployeeDepartment from "../../components/Form/EmployeeDepartment";
 
 export default function CreateEmployee() {
   const dispatch = useDispatch();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const methods = useForm({
     defaultValues: {
@@ -38,6 +41,7 @@ export default function CreateEmployee() {
           : null,
       }),
     );
+    setModalOpen(true);
   };
 
   return (
@@ -54,6 +58,19 @@ export default function CreateEmployee() {
           </form>
         </FormProvider>
       </LocalizationProvider>
+
+      <Modal
+        title="Employee created"
+        buttonLabel="Close"
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        preventScroll
+        closeOnOverlayClick
+        closeOnEsc
+        className="createEmployee__modal"
+      >
+        <p>The employee has been successfully added.</p>
+      </Modal>
     </main>
   );
 }
