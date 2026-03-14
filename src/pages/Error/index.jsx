@@ -1,8 +1,9 @@
 export default function Error() {
   return (
-    <section>
+    <section className="error">
       <h2>
-        Erreur <span>404</span>
+        Error <span>404</span>
+        <p>Page not found</p>
       </h2>
     </section>
   );

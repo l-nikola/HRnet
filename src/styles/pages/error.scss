@@ -1,0 +1,19 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    font-size: 48px;
+    color: var(--lime50);
+
+    span {
+      color: var(--lime100);
+      font-size: 64px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+}
