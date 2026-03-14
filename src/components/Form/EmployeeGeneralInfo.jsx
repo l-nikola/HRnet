@@ -67,6 +67,7 @@ export default function EmployeeGeneralInfo() {
             captionLayout="dropdown"
             error={!!errors.startDate}
             helperText={errors.startDate?.message}
+            popupClassName="employeeGeneralInfo__datePickerPopup"
           />
         )}
       />

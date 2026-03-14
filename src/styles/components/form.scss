@@ -6,6 +6,18 @@
   .dp-label.dp-label-displayed {
     background-color: var(--lime50);
   }
+
+  &__datePickerPopup {
+    .dp-popup-today-btn {
+      background-color: transparent;
+      border: 1px solid #64665c;
+      color: #64665c;
+
+      &:hover {
+        background-color: var(--lime100);
+      }
+    }
+  }
 }
 
 .employeeAddress {
