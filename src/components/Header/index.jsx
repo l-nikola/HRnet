@@ -14,8 +14,22 @@ export default function Header() {
         <h1>HRnet</h1>
       </a>
       {/* Displays a different title and button depending on the current page */}
-      <h2>{path === "/" ? "Create Employee" : "Current Employees"}</h2>
-      <Button mode={path === "/" ? "currentEmployee" : "createEmployee"} />
+      <h2>
+        {path === "/"
+          ? "Create Employee"
+          : path === "/current-employee"
+            ? "Current Employees"
+            : ""}
+      </h2>
+      <Button
+        mode={
+          path === "/"
+            ? "currentEmployee"
+            : path === "/current-employee"
+              ? "createEmployee"
+              : ""
+        }
+      />
     </header>
   );
 }

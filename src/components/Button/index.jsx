@@ -4,9 +4,9 @@ export default function Button({ mode }) {
     <a href="/" className="button">
       Create employee
     </a>
-  ) : (
+  ) : mode === "currentEmployee" ? (
     <a href="/current-employee" className="button">
       View current employees
     </a>
-  );
+  ) : null;
 }
