@@ -34,10 +34,10 @@ export default function CreateEmployee() {
       addEmployee({
         ...data,
         dateOfBirth: data.dateOfBirth
-          ? dayjs(data.dateOfBirth).format("MM-DD-YYYY")
+          ? dayjs(data.dateOfBirth).format("MM/DD/YYYY")
           : null,
         startDate: data.startDate
-          ? dayjs(data.startDate).format("MM-DD-YYYY")
+          ? dayjs(data.startDate).format("MM/DD/YYYY")
           : null,
       }),
     );
