@@ -1,4 +1,5 @@
 export default function Button({ mode }) {
+  // Renders a different link depending on the current page
   return mode === "createEmployee" ? (
     <a href="/" className="button">
       Create employee

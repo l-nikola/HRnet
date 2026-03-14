@@ -7,6 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { departements } from "../../data/departements";
 
 export default function EmployeeDepartment() {
+  // Accesses the parent form context (validation, errors)
   const {
     control,
     formState: { errors },
@@ -18,12 +19,14 @@ export default function EmployeeDepartment() {
       <div>
         <FormControl variant="standard" fullWidth error={!!errors.department}>
           <InputLabel id="department-label">Department</InputLabel>
+          {/* Controller is used for the Select because it's not a native input */}
           <Controller
             name="department"
             control={control}
             rules={{ required: "Department is required" }}
             render={({ field }) => (
               <Select {...field} labelId="department-label">
+                {/* Renders one option per department from the data file */}
                 {departements.map((departement) => (
                   <MenuItem key={departement.id} value={departement.id}>
                     {departement.label}

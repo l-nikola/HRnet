@@ -29,10 +29,12 @@ export default function CreateEmployee() {
     },
   });
 
+  // Dispatches the new employee to the Redux store and opens the confirmation modal
   const onSubmit = (data) => {
     dispatch(
       addEmployee({
         ...data,
+        // Converts dates to strings before storing
         dateOfBirth: data.dateOfBirth
           ? dayjs(data.dateOfBirth).format("MM/DD/YYYY")
           : null,
@@ -47,6 +49,7 @@ export default function CreateEmployee() {
   return (
     <main className="createEmployee">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
+        {/* FormProvider shares the form context with all child components */}
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
             <EmployeeGeneralInfo />
@@ -58,7 +61,7 @@ export default function CreateEmployee() {
           </form>
         </FormProvider>
       </LocalizationProvider>
-
+      {/* Confirmation modal after a successful form submission */}
       <Modal
         title="Employee created"
         buttonLabel="Close"

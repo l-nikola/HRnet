@@ -8,6 +8,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import { states } from "../../data/states";
 
 export default function EmployeeAddress() {
+  // Accesses the parent form context (validation, errors, registration)
   const {
     register,
     control,
@@ -33,6 +34,7 @@ export default function EmployeeAddress() {
       />
       <FormControl variant="standard" fullWidth error={!!errors.state}>
         <InputLabel id="state-label">State</InputLabel>
+        {/* Controller is used for the Select because it's not a native input */}
         <Controller
           name="state"
           control={control}
@@ -57,6 +59,7 @@ export default function EmployeeAddress() {
         variant="standard"
         {...register("zipCode", {
           required: "Zip code is required",
+          // Validates that the zip code is exactly 5 digits
           pattern: { value: /^\d{5}$/, message: "Must be 5 digits" },
         })}
         error={!!errors.zipCode}

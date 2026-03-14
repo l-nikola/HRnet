@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import DatePicker from "../../components/DatePicker";
 
 export default function EmployeeGeneralInfo() {
+  // Accesses the parent form context (validation, errors, registration)
   const {
     register,
     control,
@@ -34,6 +35,7 @@ export default function EmployeeGeneralInfo() {
         helperText={errors.lastName?.message}
       />
 
+      {/* Controller is used for DatePicker because it's not a native input */}
       <Controller
         name="dateOfBirth"
         control={control}

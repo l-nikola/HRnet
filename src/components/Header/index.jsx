@@ -3,6 +3,7 @@ import Logo from "../../../public/Logo.svg";
 import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  // Gets the current URL path to adapt the header content
   const location = useLocation();
   const path = location.pathname;
 
@@ -12,6 +13,7 @@ export default function Header() {
         <img src={Logo} alt="Logo HRnet" />
         <h1>HRnet</h1>
       </a>
+      {/* Displays a different title and button depending on the current page */}
       <h2>{path === "/" ? "Create Employee" : "Current Employees"}</h2>
       <Button mode={path === "/" ? "currentEmployee" : "createEmployee"} />
     </header>

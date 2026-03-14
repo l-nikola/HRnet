@@ -16,6 +16,7 @@ export default function DataTableHead({
   return (
     <TableHead className="dataTable__head">
       <TableRow>
+        {/* Renders one sortable header cell per column */}
         {headCells.map((headCell) => (
           <TableCell key={headCell.id}>
             <TableSortLabel
