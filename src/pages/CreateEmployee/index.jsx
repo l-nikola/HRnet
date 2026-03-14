@@ -43,6 +43,7 @@ export default function CreateEmployee() {
           : null,
       }),
     );
+    methods.reset();
     setModalOpen(true);
   };
 
