@@ -6,7 +6,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import Button from "@mui/material/Button";
-import { Modal } from "simple-modal-hrnet-oc";
+import { Modal } from "simple-modal-oc-hrnet";
 import EmployeeGeneralInfo from "../../components/Form/EmployeeGeneralInfo";
 import EmployeeAddress from "../../components/Form/EmployeeAddress";
 import EmployeeDepartment from "../../components/Form/EmployeeDepartment";
