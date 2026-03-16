@@ -1,6 +1,6 @@
 import { useFormContext, Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
-import DatePicker from "../../components/DatePicker";
+import { DatePicker } from "simple-datepicker-oc-hrnet";
 
 export default function EmployeeGeneralInfo() {
   // Accesses the parent form context (validation, errors, registration)
