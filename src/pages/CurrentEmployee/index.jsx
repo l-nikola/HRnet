@@ -18,8 +18,8 @@ export default function CurrentEmployee() {
   }));
 
   return (
-    <section className="currentEmployee">
+    <main className="currentEmployee">
       <DataTable rows={rows} headCells={headCells} />
-    </section>
+    </main>
   );
 }
