@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Popup from "../DatePicker/Popup";
+import { DayPicker } from "react-day-picker";
+import { enUS, fr } from "date-fns/locale";
 import { Calendar1 } from "lucide-react";
+import "react-day-picker/dist/style.css";
 import "./index.css";
 
 export default function DatePicker({
@@ -11,22 +13,31 @@ export default function DatePicker({
   showTodayButton,
   label,
   locale,
-  captionLayout,
+  captionLayout = "label",
   error,
   helperText,
 }) {
   const [open, setOpen] = useState(false);
+  const [month, setMonth] = useState(value ?? new Date());
 
-  // Adjusts the locale used for displaying the date
-  const resolvedLocale =
+  // Adjusts the locale used for displaying the date in the calendar and in the trigger
+  const calendarLocale =
+    locale === "fr" ? fr : locale === "en" ? enUS : undefined;
+  const dateFormatLocale =
     locale === "fr" ? "fr-FR" : locale === "en" ? "en-US" : undefined;
 
-  // Called when the user selects a date in the calendar popup.
+  // Called when the user selects a date in the calendar.
   // - Updates the value
   // - Closes the popup
   const handleChange = (date) => {
+    if (!date) return;
     onChange(date);
     setOpen(false);
+  };
+
+  // Allows to directly select today's date via the "Today / Aujourd'hui" button.
+  const handleTodayClick = () => {
+    handleChange(new Date());
   };
 
   return (
@@ -49,12 +60,12 @@ export default function DatePicker({
           {label}
         </span>
 
-        {/* Date or placeholder if no date is selected */}
+        {/* Selected date or placeholder if no date is selected */}
         <span
           className={`${value ? "dp-value" : "dp-placeholder"} ${error ? "dp-placeholder--error" : ""}`}
         >
           {value
-            ? value.toLocaleDateString(resolvedLocale, {
+            ? value.toLocaleDateString(dateFormatLocale, {
                 month: "2-digit",
                 day: "2-digit",
                 year: "numeric",
@@ -71,18 +82,29 @@ export default function DatePicker({
 
       {open && (
         <>
-          {/* Backdrop permitting to close the popup on click */}
+          {/* Backdrop to close the popup when clicking outside */}
           <div className="dp-backdrop" onClick={() => setOpen(false)} />
 
-          {/* Popup containing the calendar */}
-          <Popup
-            value={value}
-            onChange={handleChange}
-            showTodayButton={showTodayButton}
-            locale={locale}
-            captionLayout={captionLayout}
-            popupClassName={popupClassName}
-          />
+          <div className={`dp-popup ${popupClassName ?? ""}`}>
+            {/* Calendar */}
+            <DayPicker
+              mode="single"
+              showOutsideDays
+              month={month}
+              onMonthChange={setMonth}
+              selected={value}
+              onSelect={handleChange}
+              locale={calendarLocale}
+              captionLayout={captionLayout}
+            />
+
+            {/* Optional button to select today's date */}
+            {showTodayButton && (
+              <button onClick={handleTodayClick} className="dp-popup-today-btn">
+                {locale === "fr" ? "Aujourd'hui" : "Today"}
+              </button>
+            )}
+          </div>
         </>
       )}
     </div>
