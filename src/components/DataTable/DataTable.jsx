@@ -79,7 +79,7 @@ export default function DataTable({ rows, headCells }) {
         </Box>
 
         <TableContainer>
-          <Table size="medium" className="dataTable__table">
+          <Table size="medium">
             <DataTableHead
               order={order}
               orderBy={orderBy}
