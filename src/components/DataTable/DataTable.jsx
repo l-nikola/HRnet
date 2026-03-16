@@ -118,6 +118,16 @@ export default function DataTable({ rows, headCells }) {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage={
+            <label htmlFor="rows-per-page-select">Rows per page:</label>
+          }
+          slotProps={{
+            select: {
+              inputProps: {
+                id: "rows-per-page-select",
+              },
+            },
+          }}
         />
       </Paper>
     </Box>

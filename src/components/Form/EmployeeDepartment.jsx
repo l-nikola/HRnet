@@ -25,7 +25,12 @@ export default function EmployeeDepartment() {
             control={control}
             rules={{ required: "Department is required" }}
             render={({ field }) => (
-              <Select {...field} labelId="department-label">
+              <Select
+                {...field}
+                id="department"
+                labelId="department-label"
+                inputProps={{ "aria-labelledby": "department-label" }}
+              >
                 {/* Renders one option per department from the data file */}
                 {departements.map((departement) => (
                   <MenuItem key={departement.id} value={departement.id}>

@@ -40,7 +40,12 @@ export default function EmployeeAddress() {
           control={control}
           rules={{ required: "State is required" }}
           render={({ field }) => (
-            <Select {...field} labelId="state-label">
+            <Select
+              {...field}
+              id="state"
+              labelId="state-label"
+              inputProps={{ "aria-labelledby": "state-label" }}
+            >
               {states.map((state) => (
                 <MenuItem key={state.id} value={state.id}>
                   {state.name}
