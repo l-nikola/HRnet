@@ -9,6 +9,12 @@ const persistedReducer = persistReducer(persistConfig, employeeReducer);
 
 export const store = configureStore({
   reducer: { employees: persistedReducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);

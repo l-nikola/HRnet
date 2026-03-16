@@ -33,6 +33,7 @@ export default function CreateEmployee() {
   const onSubmit = (data) => {
     dispatch(
       addEmployee({
+        id: crypto.randomUUID(),
         ...data,
         // Converts dates to strings before storing
         dateOfBirth: data.dateOfBirth
