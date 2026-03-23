@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   // Provides the Redux store to the app
   <Provider store={store}>
     {/* Waits for the persisted store to load before rendering */}
-    <PersistGate loading={null} persistor={persistor}>
+    <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
       <Router>
         <Header />
         <Routes>

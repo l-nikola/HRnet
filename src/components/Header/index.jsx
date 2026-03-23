@@ -1,6 +1,5 @@
 import Button from "../Button";
-import Logo from "../../../public/Logo.svg";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 export default function Header() {
   // Gets the current URL path to adapt the header content
@@ -9,10 +8,10 @@ export default function Header() {
 
   return (
     <header>
-      <a href="/">
-        <img src={Logo} alt="Logo HRnet" />
+      <Link to="/">
+        <img src="/Logo.svg" alt="Logo HRnet" loading="eager" />
         <h1>HRnet</h1>
-      </a>
+      </Link>
       {/* Displays a different title and button depending on the current page */}
       <h2>
         {path === "/"

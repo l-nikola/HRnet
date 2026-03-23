@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function Button({ mode }) {
   // Renders a different link depending on the current page
   return mode === "createEmployee" ? (
-    <a href="/" className="button">
+    <Link to="/" className="button">
       Create employee
-    </a>
+    </Link>
   ) : mode === "currentEmployee" ? (
-    <a href="/current-employee" className="button">
+    <Link to="/current-employee" className="button">
       View current employees
-    </a>
+    </Link>
   ) : null;
 }
