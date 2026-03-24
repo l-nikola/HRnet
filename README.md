@@ -11,7 +11,7 @@ Ce projet consiste à migrer une ancienne application front-end basée sur jQuer
 ## Démo
 
 Application déployée sur Vercel :
-👉 https://hrnet-react.vercel.app
+👉 https://h-rnet-lemon.vercel.app/
 
 ## Sommaire
 
@@ -68,6 +68,9 @@ Dans le cadre du projet, deux plugins jQuery ont été convertis en composant Re
 
 ### DatePicker
 
+[Lien du package npm](https://www.npmjs.com/package/simple-datepicker-oc-hrnet)
+[Lien du repo Github](https://github.com/l-nikola/simple-datepicker-oc-hrnet)
+
 Fonctionnalités :
 
 - Input permettant de sélectionner une date
@@ -80,6 +83,9 @@ Fonctionnalités :
 - Le composant est publié sous forme de package npm : [le lien](le lien)
 
 ### Modal React
+
+[Lien du package npm](https://www.npmjs.com/package/simple-modal-oc-hrnet)
+[Lien du repo Github](https://github.com/l-nikola/simple-modal-oc-hrnet)
 
 Fonctionnalités :
 
@@ -111,13 +117,19 @@ src/
 │ ├── Form
 │ └── ...
 │
+├── data/
+│ ├── departements.js
+│ └── ...
+│
 ├── pages/
 │ ├── CreateEmployee
 │ ├── EmployeeList
 │ └── Error
 │
 ├── store/
-│ └── employeeStore
+│ ├── slices/
+│ │ ├── ...
+│ └── store.js
 │
 ├── styles/
 │ ├── components/
@@ -133,8 +145,16 @@ src/
 
 ### Create employee
 
-screen here
+**Desktop :**
+<img src="/public/screenshots/create-employee-desktop.png" alt="Create employee desktop performance" width="400" />
+
+**Mobile :**
+<img src="/public/screenshots/create-employee-mobile.png" alt="Create employee mobile performance" width="400" />
 
 ### Current employee
 
-screen here
+**Desktop :**
+<img src="/public/screenshots/current-employee-desktop.png" alt="Current employee mobile performance" width="400" />
+
+**Mobile :**
+<img src="/public/screenshots/current-employee-mobile.png" alt="Current employee mobile performance" width="400" />
