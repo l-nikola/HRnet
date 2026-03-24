@@ -146,15 +146,19 @@ src/
 ### Create employee
 
 **Desktop :**
+<br>
 <img src="/public/screenshots/create-employee-desktop.png" alt="Create employee desktop performance" width="400" />
 
 **Mobile :**
+<br>
 <img src="/public/screenshots/create-employee-mobile.png" alt="Create employee mobile performance" width="400" />
 
 ### Current employee
 
 **Desktop :**
+<br>
 <img src="/public/screenshots/current-employee-desktop.png" alt="Current employee mobile performance" width="400" />
 
 **Mobile :**
+<br>
 <img src="/public/screenshots/current-employee-mobile.png" alt="Current employee mobile performance" width="400" />
