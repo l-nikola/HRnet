@@ -1,0 +1,134 @@
+{
+  "createEmployee": {
+    "scores": {
+      "jquery": {
+        "mobile": {
+          "performance": 91,
+          "accessibility": 89,
+          "bestPractices": 96,
+          "seo": 90
+        },
+        "desktop": {
+          "performance": 100,
+          "accessibility": 89,
+          "bestPractices": 96,
+          "seo": 90
+        }
+      },
+      "react": {
+        "mobile": {
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        "desktop": {
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        }
+      }
+    },
+    "metrics": {
+      "jquery": {
+        "mobile": {
+          "firstContentfulPaint": 2.8,
+          "largestContentfulPaint": 2.8,
+          "totalBlockingTime": 0,
+          "cumulativeLayoutShift": 0.003,
+          "speedIndex": 2.8
+        },
+        "desktop": {
+          "firstContentfulPaint": 0.6,
+          "largestContentfulPaint": 0.6,
+          "totalBlockingTime": 0,
+          "cumulativeLayoutShift": 0.013,
+          "speedIndex": 0.6
+        }
+      },
+      "react": {
+        "mobile": {
+          "firstContentfulPaint": 0.8,
+          "largestContentfulPaint": 0.9,
+          "totalBlockingTime": 30,
+          "cumulativeLayoutShift": 0.04,
+          "speedIndex": 0.8
+        },
+        "desktop": {
+          "firstContentfulPaint": 0.2,
+          "largestContentfulPaint": 0.2,
+          "totalBlockingTime": 0,
+          "cumulativeLayoutShift": 0.032,
+          "speedIndex": 0.2
+        }
+      }
+    }
+  },
+  "currentEmployee": {
+    "scores": {
+      "jquery": {
+        "mobile": {
+          "performance": 99,
+          "accessibility": 94,
+          "bestPractices": 96,
+          "seo": 80
+        },
+        "desktop": {
+          "performance": 100,
+          "accessibility": 94,
+          "bestPractices": 96,
+          "seo": 80
+        }
+      },
+      "react": {
+        "mobile": {
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        "desktop": {
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        }
+      }
+    },
+    "metrics": {
+      "jquery": {
+        "mobile": {
+          "firstContentfulPaint": 1.7,
+          "largestContentfulPaint": 1.8,
+          "totalBlockingTime": 0,
+          "cumulativeLayoutShift": 0,
+          "speedIndex": 1.7
+        },
+        "desktop": {
+          "firstContentfulPaint": 0.5,
+          "largestContentfulPaint": 0.5,
+          "totalBlockingTime": 0,
+          "cumulativeLayoutShift": 0,
+          "speedIndex": 0.5
+        }
+      },
+      "react": {
+        "mobile": {
+          "firstContentfulPaint": 0.8,
+          "largestContentfulPaint": 0.9,
+          "totalBlockingTime": 50,
+          "cumulativeLayoutShift": 0.028,
+          "speedIndex": 0.8
+        },
+        "desktop": {
+          "firstContentfulPaint": 0.2,
+          "largestContentfulPaint": 0.2,
+          "totalBlockingTime": 0,
+          "cumulativeLayoutShift": 0.022,
+          "speedIndex": 0.2
+        }
+      }
+    }
+  }
+}
